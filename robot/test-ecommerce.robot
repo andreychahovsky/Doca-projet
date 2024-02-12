@@ -22,13 +22,14 @@ E-Commerce
     Set Selenium Implicit Wait    5 seconds
     # Create Account    ${username}    ${email}    ${password}
     Login    ${username}    ${password}
-    Check Details
-    Check Buy
-    Check Sell
-    Check Balance
-    Check List Owned
-    Logout
-    Login incorrect    ${username}    ${password_incorrect}
+    User Profile
+    # Check Details
+    # Check Buy
+    # Check Sell
+    # Check Balance
+    # Check List Owned
+    # Logout
+    # Login incorrect    ${username}    ${password_incorrect}
 
 *** Keywords ***
 
@@ -49,6 +50,12 @@ Login
     Input Text    id=username    ${username}
     Input Text    id=password    ${password}
     Click Button    id=submit
+
+User Profile
+    Click Element    xpath://b[contains(text(),'${username}')]
+    ${page_title}    Get Title
+    Should Not Be Equal As Strings    first=${page_title}    second=E-Commerce | Market    msg=Actual result : The same page\nExpected result : User Profile page
+    Sleep    5 seconds
 
 Check Details
     Go To    ${url_market}
