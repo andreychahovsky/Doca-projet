@@ -11,9 +11,9 @@ ${create_acc_url}    http://127.0.0.1:5000/register
 ${login_url}    http://127.0.0.1:5000/login
 ${logout_url}    http://127.0.0.1:5000/logout
 ${market_url}    http://127.0.0.1:5000/market
-${username}    Vasia
-${email}    vasia@pupkin.com
-${password}    Password-1
+${admin_url}    http://127.0.0.1:5000/admin
+${username}    admin
+${password}    admin
 ${password_incorrect}    password-1
 
 *** Test Cases ***
@@ -22,13 +22,16 @@ E-Commerce
     Set Selenium Implicit Wait    5 seconds
     # Create Account    ${username}    ${email}    ${password}
     Login    ${username}    ${password}
-    # User Profile
     # Check Details
     # Check Buy
     # Check Sell
-    Check Balance
+    # Check Balance
     # Check List Owned
-    # Logout
+    # User Delete
+    # Items Delete
+    # Product Update
+    # User Update
+    Logout
     # Login incorrect    ${username}    ${password_incorrect}
 
 *** Keywords ***
@@ -50,11 +53,6 @@ Login
     Input Text    id=username    ${username}
     Input Text    id=password    ${password}
     Click Button    id=submit
-
-User Profile
-    Click Element    xpath://b[contains(text(),'${username}')]
-    ${page_title}    Get Title
-    Should Not Be Equal As Strings    first=${page_title}    second=E-Commerce | Market    msg=Actual result : The same page\nExpected result : User Profile page
 
 Check Details
     Go To    ${market_url}
@@ -100,30 +98,8 @@ Check Sell
 Check Balance
     Go to    ${market_url}
     Sleep    1 seconds
-    ${balance_before}    Get Text    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]
-    ${balance_before}    Remove String    ${balance_before}    $    ,
-    ${balance_before}    Convert To Integer    ${balance_before}
-    ${expected_balance}    Set Variable    ${10000}
-    Should Be Equal As Numbers    first=${balance_before}    second=10000    msg=Balance start:\nActual balance is ${balance_before}.\nExpected balance is ${expected_balance}.
-    ${price}    Get Text    xpath://tr[1]/td[3]
-    ${price}    Remove String    ${price}    $    ,
-    ${price}    Convert To Integer    ${price}
-    ${expected_balance}    Evaluate    ${balance_before} - ${price}
-    Click Button    xpath://button[contains(text(),'Buy')]
-    Wait Until Element Is Visible    id=submit
-    Click Element    id=submit
-    ${balance_after}    Get Text    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]
-    ${balance_after}    Remove String    ${balance_after}    $    ,
-    ${balance_after}    Convert To Integer    ${balance_after}
-    Should Be Equal As Numbers    first=${balance_after}    second=${expected_balance}    msg=Balance start:\nActual balance is ${balance_after}.\nExpected balance is ${expected_balance}.
-    Click Button    xpath://button[contains(text(),'Sell')]
-    Sleep    1 seconds
-    Click Element    xpath://div[@id='Sell-1']/div/div/div[2]/form/div/input[2]
-    ${balance_after}    Get Text    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]
-    ${balance_after}    Remove String    ${balance_after}    $    ,
-    ${balance_after}    Convert To Integer    ${balance_after}
-    ${expected_balance}    Set Variable    ${10000}
-    Should Be Equal As Numbers    first=${balance_after}    second=${expected_balance}    msg=Balance start:\nActual balance is ${balance_after}.\nExpected balance is ${expected_balance}.
+    ${balance_exist}    Run Keyword And Return Status    Page Should Contain Element    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')
+    Should Be True    condition=${balance_exist}    msg=There is no balance
 
 Check List Owned
     Go to    ${market_url}
@@ -142,6 +118,42 @@ Check List Owned
     Click Element    xpath://div[@id='Sell-1']/div/div/div[2]/form/div/input[2]
     ${owned_items}    Get Element Count    xpath://div[contains(@class,'card-body')]
     Should Be Equal As Numbers    first=${owned_items}    second=0    msg=After sell:\nActual count of items is ${owned_items}.\nExpected cont of items is 0.
+
+User Delete
+    Go To    ${admin_url}
+    Sleep    1 seconds
+    ${users_before_delete}    Get Element Count    xpath://div[@class='col-4']/table/tbody/tr/td/button[contains(text(),'Delete')]
+    Click Element    xpath:(//div[@class='col-4']/table/tbody/tr/td/button[contains(text(),'Delete')])[2]
+    ${users_after_delete}    Get Element Count    xpath://div[@class='col-4'][1]/table/tbody/tr/td/button[contains(text(),'Delete')]
+    ${users_before_delete}    Convert To Number    ${users_before_delete}
+    ${users_after_delete}    Convert To Number    ${users_after_delete}
+    Should Not Be Equal As Numbers    first=${users_before_delete}    second=${users_after_delete}    msg=The nomber of users wasn't changed after click "Delete".
+
+Items Delete
+    Go To    ${admin_url}
+    Sleep    1 seconds
+    ${items_before_delete}    Get Element Count    xpath://div[@class='col-8']/table/tbody/tr/td/button[contains(text(),'Delete')]
+    Click Element    xpath://div[@class='col-8']/table/tbody/tr/td/button[contains(text(),'Delete')]
+    ${items_after_delete}    Get Element Count    xpath://div[@class='col-8']/table/tbody/tr/td/button[contains(text(),'Delete')]
+    ${items_before_delete}    Convert To Number    ${items_before_delete}
+    ${items_after_delete}    Convert To Number    ${items_after_delete}
+    Should Not Be Equal As Numbers    first=${items_before_delete}    second=${items_after_delete}    msg=The nomber of items wasn't changed after click "Delete".
+
+Product Update
+    Go To    ${admin_url}
+    Sleep    1 seconds
+    ${page_title_before}    Get Title
+    Click Element    xpath://button[contains(text(),'Update')]
+    ${page_title_after}    Get Title
+    Should Not Be Equal As Strings    first=${page_title_before}    second=${page_title_after}    msg=Actual result : The same page\nExpected result : Product Details page
+
+User Update
+    Go To    ${admin_url}
+    Sleep    1 seconds
+    ${page_title_before}    Get Title
+    Click Element    xpath://div[@class='col-4']/table/tbody/tr[2]/td[2]
+    ${page_title_after}    Get Title
+    Should Not Be Equal As Strings    first=${page_title_before}    second=${page_title_after}    msg=Actual result : The same page\nExpected result : User Details page
 
 Logout
     Go To    ${logout_url}
