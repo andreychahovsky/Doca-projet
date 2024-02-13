@@ -22,14 +22,14 @@ E-Commerce
     Set Selenium Implicit Wait    5 seconds
     # Create Account    ${username}    ${email}    ${password}
     Login    ${username}    ${password}
-    # User Profile
-    # Check Details
-    # Check Buy
-    # Check Sell
+    User Profile
+    Check Details
+    Check Buy
+    Check Sell
     Check Balance
-    # Check List Owned
-    # Logout
-    # Login incorrect    ${username}    ${password_incorrect}
+    Check List Owned
+    Logout
+    Login incorrect    ${username}    ${password_incorrect}
 
 *** Keywords ***
 

@@ -20,31 +20,20 @@ ${password_incorrect}    password-1
 E-Commerce
     Maximize Browser Window
     Set Selenium Implicit Wait    5 seconds
-    # Create Account    ${username}    ${email}    ${password}
     Login    ${username}    ${password}
-    # Check Details
-    # Check Buy
-    # Check Sell
+    Check Details
+    Check Buy
+    Check Sell
     Check Balance
-    # Check List Owned
-    # User Delete
-    # Items Delete
-    # Product Update
-    # User Update
+    Check List Owned
+    User Delete
+    Items Delete
+    Product Update
+    User Update
     Logout
-    # Login incorrect    ${username}    ${password_incorrect}
+    Login incorrect    ${username}    ${password_incorrect}
 
 *** Keywords ***
-
-Create Account
-    [Arguments]    ${username}    ${email}    ${password}
-    Go To    ${create_acc_url}
-    Sleep    1 seconds
-    Input Text    id=username    ${username}
-    Input Text    id=email_address    ${email}
-    Input Text    id=password1    ${password}
-    Input Text    id=password2    ${password}
-    Click Button    id=submit
 
 Login
     [Arguments]    ${username}    ${password}

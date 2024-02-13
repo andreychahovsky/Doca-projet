@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240213 09:31:38.385" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240213 11:13:40.745" rpa="false" schemaversion="4">
 <suite id="s1" name="Projet" source="/home/andrew/Documents/QA/Docaposte/Projet">
 <suite id="s1-s1" name="Robot" source="/home/andrew/Documents/QA/Docaposte/Projet/robot">
-<suite id="s1-s1-s1" name="Test-Ecommerce-Admin" source="/home/andrew/Documents/QA/Docaposte/Projet/robot/test-ecommerce-admin.robot">
+<suite id="s1-s1-s1" name="Test-Ecommerce-User" source="/home/andrew/Documents/QA/Docaposte/Projet/robot/test-ecommerce-user.robot">
 <test id="s1-s1-s1-t1" name="E-Commerce" line="20">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>https://www.google.com/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240213 09:31:39.112" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<status status="PASS" starttime="20240213 09:31:39.110" endtime="20240213 09:31:44.165"/>
+<msg timestamp="20240213 11:13:41.590" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20240213 11:13:41.586" endtime="20240213 11:13:46.638"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240213 09:31:44.167" endtime="20240213 09:31:44.284"/>
+<status status="PASS" starttime="20240213 11:13:46.640" endtime="20240213 11:13:46.754"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5 seconds</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240213 09:31:44.285" endtime="20240213 09:31:44.291"/>
+<status status="PASS" starttime="20240213 11:13:46.756" endtime="20240213 11:13:46.763"/>
 </kw>
 <kw name="Login">
 <arg>${username}</arg>
@@ -26,257 +26,168 @@
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${login_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240213 09:31:44.299" level="INFO">Opening url 'http://127.0.0.1:5000/login'</msg>
-<status status="PASS" starttime="20240213 09:31:44.297" endtime="20240213 09:31:44.667"/>
+<msg timestamp="20240213 11:13:46.770" level="INFO">Opening url 'http://127.0.0.1:5000/login'</msg>
+<status status="PASS" starttime="20240213 11:13:46.767" endtime="20240213 11:13:47.155"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240213 09:31:45.669" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240213 09:31:44.668" endtime="20240213 09:31:45.670"/>
+<msg timestamp="20240213 11:13:48.158" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240213 11:13:47.157" endtime="20240213 11:13:48.159"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=username</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240213 09:31:45.675" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
-<status status="PASS" starttime="20240213 09:31:45.671" endtime="20240213 09:31:46.056"/>
+<msg timestamp="20240213 11:13:48.163" level="INFO">Typing text 'Vasia' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20240213 11:13:48.160" endtime="20240213 11:13:48.543"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240213 09:31:46.061" level="INFO">Typing text 'admin' into text field 'id=password'.</msg>
-<status status="PASS" starttime="20240213 09:31:46.057" endtime="20240213 09:31:46.359"/>
+<msg timestamp="20240213 11:13:48.547" level="INFO">Typing text 'Password-1' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20240213 11:13:48.544" endtime="20240213 11:13:48.842"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=submit</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240213 09:31:46.363" level="INFO">Clicking button 'id=submit'.</msg>
-<status status="PASS" starttime="20240213 09:31:46.361" endtime="20240213 09:31:47.794"/>
+<msg timestamp="20240213 11:13:48.846" level="INFO">Clicking button 'id=submit'.</msg>
+<status status="PASS" starttime="20240213 11:13:48.844" endtime="20240213 11:13:50.242"/>
 </kw>
-<status status="PASS" starttime="20240213 09:31:44.293" endtime="20240213 09:31:47.796"/>
+<status status="PASS" starttime="20240213 11:13:46.765" endtime="20240213 11:13:50.243"/>
 </kw>
-<kw name="Check Balance">
+<kw name="Check Sell">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${market_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240213 09:31:47.802" level="INFO">Opening url 'http://127.0.0.1:5000/market'</msg>
-<status status="PASS" starttime="20240213 09:31:47.800" endtime="20240213 09:31:47.981"/>
+<msg timestamp="20240213 11:13:50.247" level="INFO">Opening url 'http://127.0.0.1:5000/market'</msg>
+<status status="PASS" starttime="20240213 11:13:50.246" endtime="20240213 11:13:50.425"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240213 09:31:48.984" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240213 09:31:47.982" endtime="20240213 09:31:48.985"/>
+<msg timestamp="20240213 11:13:51.428" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240213 11:13:50.426" endtime="20240213 11:13:51.429"/>
 </kw>
-<kw name="Run Keyword And Return Status" library="BuiltIn">
-<var>${balance_exist}</var>
-<arg>Page Should Contain Element</arg>
-<arg>xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]</arg>
-<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
-<kw name="Page Should Contain Element" library="SeleniumLibrary">
-<arg>xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]</arg>
-<doc>Verifies that element ``locator`` is found on the current page.</doc>
-<msg timestamp="20240213 09:31:54.540" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-24.png"&gt;&lt;img src="selenium-screenshot-24.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg timestamp="20240213 09:31:54.541" level="FAIL">Page should have contained element 'xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]' but did not.</msg>
-<status status="FAIL" starttime="20240213 09:31:48.987" endtime="20240213 09:31:54.548"/>
-</kw>
-<msg timestamp="20240213 09:31:54.549" level="INFO">${balance_exist} = False</msg>
-<status status="PASS" starttime="20240213 09:31:48.986" endtime="20240213 09:31:54.549"/>
-</kw>
-<if>
-<branch type="IF" condition="${balance_exist} == ${True}">
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${balance_before}</var>
-<arg>xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.554" endtime="20240213 09:31:54.555"/>
-</kw>
-<kw name="Remove String" library="String">
-<var>${balance_before}</var>
-<arg>${balance_before}</arg>
-<arg>$</arg>
-<arg>,</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.557" endtime="20240213 09:31:54.558"/>
-</kw>
-<kw name="Convert To Integer" library="BuiltIn">
-<var>${balance_before}</var>
-<arg>${balance_before}</arg>
-<doc>Converts the given item to an integer number.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.559" endtime="20240213 09:31:54.560"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${expected_balance}</var>
-<arg>${10000}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.561" endtime="20240213 09:31:54.562"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${owned_items}</var>
+<arg>xpath://div[contains(@class,'card-body')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240213 11:13:51.478" level="INFO">${owned_items} = 1</msg>
+<status status="PASS" starttime="20240213 11:13:51.430" endtime="20240213 11:13:51.478"/>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>first=${balance_before}</arg>
-<arg>second=10000</arg>
-<arg>msg=Balance start:\nActual balance is ${balance_before}.\nExpected balance is ${expected_balance}.</arg>
+<arg>first=${owned_items}</arg>
+<arg>second=1</arg>
+<arg>msg=Before sell:\nActual count of items is ${owned_items}.\nExpected cont of items is 1.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.563" endtime="20240213 09:31:54.564"/>
+<msg timestamp="20240213 11:13:51.481" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20240213 11:13:51.479" endtime="20240213 11:13:51.482"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${price}</var>
-<arg>xpath://tr[1]/td[3]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.565" endtime="20240213 09:31:54.566"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${available_items_before_sell}</var>
+<arg>xpath://tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240213 11:13:51.525" level="INFO">${available_items_before_sell} = 13</msg>
+<status status="PASS" starttime="20240213 11:13:51.482" endtime="20240213 11:13:51.526"/>
 </kw>
-<kw name="Remove String" library="String">
-<var>${price}</var>
-<arg>${price}</arg>
-<arg>$</arg>
-<arg>,</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.567" endtime="20240213 09:31:54.569"/>
-</kw>
-<kw name="Convert To Integer" library="BuiltIn">
-<var>${price}</var>
-<arg>${price}</arg>
-<doc>Converts the given item to an integer number.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.570" endtime="20240213 09:31:54.570"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${expected_balance}</var>
-<arg>${balance_before} - ${price}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.572" endtime="20240213 09:31:54.573"/>
-</kw>
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath://button[contains(text(),'Buy')]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.574" endtime="20240213 09:31:54.575"/>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>id=submit</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.576" endtime="20240213 09:31:54.577"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=submit</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.578" endtime="20240213 09:31:54.579"/>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${balance_after}</var>
-<arg>xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.580" endtime="20240213 09:31:54.581"/>
-</kw>
-<kw name="Remove String" library="String">
-<var>${balance_after}</var>
-<arg>${balance_after}</arg>
-<arg>$</arg>
-<arg>,</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.582" endtime="20240213 09:31:54.583"/>
-</kw>
-<kw name="Convert To Integer" library="BuiltIn">
-<var>${balance_after}</var>
-<arg>${balance_after}</arg>
-<doc>Converts the given item to an integer number.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.584" endtime="20240213 09:31:54.585"/>
-</kw>
-<kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>first=${balance_after}</arg>
-<arg>second=${expected_balance}</arg>
-<arg>msg=Balance start:\nActual balance is ${balance_after}.\nExpected balance is ${expected_balance}.</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.586" endtime="20240213 09:31:54.587"/>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${available_items_before_sell}</var>
+<arg>${available_items_before_sell}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240213 11:13:51.528" level="INFO">${available_items_before_sell} = 13.0</msg>
+<status status="PASS" starttime="20240213 11:13:51.526" endtime="20240213 11:13:51.529"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>xpath://button[contains(text(),'Sell')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.588" endtime="20240213 09:31:54.589"/>
+<msg timestamp="20240213 11:13:51.532" level="INFO">Clicking button 'xpath://button[contains(text(),'Sell')]'.</msg>
+<status status="PASS" starttime="20240213 11:13:51.529" endtime="20240213 11:13:51.760"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.590" endtime="20240213 09:31:54.591"/>
+<msg timestamp="20240213 11:13:52.763" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240213 11:13:51.761" endtime="20240213 11:13:52.763"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>xpath://div[@id='Sell-1']/div/div/div[2]/form/div/input[2]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.592" endtime="20240213 09:31:54.593"/>
+<msg timestamp="20240213 11:13:52.767" level="INFO">Clicking element 'xpath://div[@id='Sell-1']/div/div/div[2]/form/div/input[2]'.</msg>
+<status status="PASS" starttime="20240213 11:13:52.765" endtime="20240213 11:13:53.239"/>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<var>${balance_after}</var>
-<arg>xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.594" endtime="20240213 09:31:54.595"/>
-</kw>
-<kw name="Remove String" library="String">
-<var>${balance_after}</var>
-<arg>${balance_after}</arg>
-<arg>$</arg>
-<arg>,</arg>
-<doc>Removes all ``removables`` from the given ``string``.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.596" endtime="20240213 09:31:54.597"/>
-</kw>
-<kw name="Convert To Integer" library="BuiltIn">
-<var>${balance_after}</var>
-<arg>${balance_after}</arg>
-<doc>Converts the given item to an integer number.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.598" endtime="20240213 09:31:54.599"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${expected_balance}</var>
-<arg>${10000}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.600" endtime="20240213 09:31:54.601"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${owned_items}</var>
+<arg>xpath://div[contains(@class,'card-body')]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240213 11:13:58.274" level="INFO">${owned_items} = 0</msg>
+<status status="PASS" starttime="20240213 11:13:53.241" endtime="20240213 11:13:58.275"/>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>first=${balance_after}</arg>
-<arg>second=${expected_balance}</arg>
-<arg>msg=Balance start:\nActual balance is ${balance_after}.\nExpected balance is ${expected_balance}.</arg>
+<arg>first=${owned_items}</arg>
+<arg>second=0</arg>
+<arg>msg=After sell:\nActual count of items is ${owned_items}.\nExpected cont of items is 0.</arg>
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="NOT RUN" starttime="20240213 09:31:54.602" endtime="20240213 09:31:54.603"/>
+<msg timestamp="20240213 11:13:58.279" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20240213 11:13:58.277" endtime="20240213 11:13:58.280"/>
 </kw>
-<status status="NOT RUN" starttime="20240213 09:31:54.551" endtime="20240213 09:31:54.604"/>
-</branch>
-<branch type="ELSE">
-<kw name="Should Be True" library="BuiltIn">
-<arg>condition=${balance_exist}</arg>
-<arg>msg=There is no balance</arg>
-<doc>Fails if the given condition is not true.</doc>
-<msg timestamp="20240213 09:31:54.608" level="FAIL">There is no balance</msg>
-<status status="FAIL" starttime="20240213 09:31:54.606" endtime="20240213 09:31:54.610"/>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${available_items_after_sell}</var>
+<arg>xpath://tr</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240213 11:13:58.307" level="INFO">${available_items_after_sell} = 14</msg>
+<status status="PASS" starttime="20240213 11:13:58.280" endtime="20240213 11:13:58.307"/>
 </kw>
-<status status="FAIL" starttime="20240213 09:31:54.605" endtime="20240213 09:31:54.612"/>
-</branch>
-<status status="FAIL" starttime="20240213 09:31:54.551" endtime="20240213 09:31:54.613"/>
-</if>
-<status status="FAIL" starttime="20240213 09:31:47.798" endtime="20240213 09:31:54.613"/>
+<kw name="Convert To Number" library="BuiltIn">
+<var>${available_items_after_sell}</var>
+<arg>${available_items_after_sell}</arg>
+<doc>Converts the given item to a floating point number.</doc>
+<msg timestamp="20240213 11:13:58.310" level="INFO">${available_items_after_sell} = 14.0</msg>
+<status status="PASS" starttime="20240213 11:13:58.308" endtime="20240213 11:13:58.310"/>
 </kw>
-<kw name="Logout">
-<status status="NOT RUN" starttime="20240213 09:31:54.616" endtime="20240213 09:31:54.617"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${check_items}</var>
+<arg>${available_items_before_sell} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240213 11:13:58.314" level="INFO">${check_items} = 14.0</msg>
+<status status="PASS" starttime="20240213 11:13:58.312" endtime="20240213 11:13:58.314"/>
+</kw>
+<kw name="Should Be Equal As Numbers" library="BuiltIn">
+<arg>first=${available_items_after_sell}</arg>
+<arg>second=${check_items}</arg>
+<arg>msg=Available items after sell ERROR.</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" starttime="20240213 11:13:58.315" endtime="20240213 11:13:58.317"/>
+</kw>
+<status status="PASS" starttime="20240213 11:13:50.244" endtime="20240213 11:13:58.317"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240213 09:31:54.619" endtime="20240213 09:31:54.815"/>
+<status status="PASS" starttime="20240213 11:13:58.320" endtime="20240213 11:13:58.541"/>
 </kw>
-<status status="FAIL" starttime="20240213 09:31:39.106" endtime="20240213 09:31:54.817">There is no balance</status>
+<status status="PASS" starttime="20240213 11:13:41.582" endtime="20240213 11:13:58.543"/>
 </test>
-<status status="FAIL" starttime="20240213 09:31:38.505" endtime="20240213 09:31:54.824"/>
+<status status="PASS" starttime="20240213 11:13:40.868" endtime="20240213 11:13:58.549"/>
 </suite>
-<status status="FAIL" starttime="20240213 09:31:38.495" endtime="20240213 09:31:54.835"/>
+<status status="PASS" starttime="20240213 11:13:40.858" endtime="20240213 11:13:58.559"/>
 </suite>
-<status status="FAIL" starttime="20240213 09:31:38.398" endtime="20240213 09:31:54.842"/>
+<status status="PASS" starttime="20240213 11:13:40.757" endtime="20240213 11:13:58.568"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Projet">Projet</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1" name="Robot">Projet.Robot</stat>
-<stat pass="0" fail="1" skip="0" id="s1-s1-s1" name="Test-Ecommerce-Admin">Projet.Robot.Test-Ecommerce-Admin</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Projet">Projet</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Robot">Projet.Robot</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test-Ecommerce-User">Projet.Robot.Test-Ecommerce-User</stat>
 </suite>
 </statistics>
 <errors>
