@@ -25,7 +25,7 @@ E-Commerce
     # Check Details
     # Check Buy
     # Check Sell
-    # Check Balance
+    Check Balance
     # Check List Owned
     # User Delete
     # Items Delete
@@ -98,8 +98,35 @@ Check Sell
 Check Balance
     Go to    ${market_url}
     Sleep    1 seconds
-    ${balance_exist}    Run Keyword And Return Status    Page Should Contain Element    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')
-    Should Be True    condition=${balance_exist}    msg=There is no balance
+    ${balance_exist}    Run Keyword And Return Status    Page Should Contain Element    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]
+    IF    ${balance_exist} == ${True}
+        ${balance_before}    Get Text    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]
+        ${balance_before}    Remove String    ${balance_before}    $    ,
+        ${balance_before}    Convert To Integer    ${balance_before}
+        ${expected_balance}    Set Variable    ${10000}
+        Should Be Equal As Numbers    first=${balance_before}    second=10000    msg=Balance start:\nActual balance is ${balance_before}.\nExpected balance is ${expected_balance}.
+        ${price}    Get Text    xpath://tr[1]/td[3]
+        ${price}    Remove String    ${price}    $    ,
+        ${price}    Convert To Integer    ${price}
+        ${expected_balance}    Evaluate    ${balance_before} - ${price}
+        Click Button    xpath://button[contains(text(),'Buy')]
+        Wait Until Element Is Visible    id=submit
+        Click Element    id=submit
+        ${balance_after}    Get Text    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]
+        ${balance_after}    Remove String    ${balance_after}    $    ,
+        ${balance_after}    Convert To Integer    ${balance_after}
+        Should Be Equal As Numbers    first=${balance_after}    second=${expected_balance}    msg=Balance start:\nActual balance is ${balance_after}.\nExpected balance is ${expected_balance}.
+        Click Button    xpath://button[contains(text(),'Sell')]
+        Sleep    1 seconds
+        Click Element    xpath://div[@id='Sell-1']/div/div/div[2]/form/div/input[2]
+        ${balance_after}    Get Text    xpath://a[contains(@style,'color: lawngreen; font-weight: bold')]
+        ${balance_after}    Remove String    ${balance_after}    $    ,
+        ${balance_after}    Convert To Integer    ${balance_after}
+        ${expected_balance}    Set Variable    ${10000}
+        Should Be Equal As Numbers    first=${balance_after}    second=${expected_balance}    msg=Balance start:\nActual balance is ${balance_after}.\nExpected balance is ${expected_balance}.
+    ELSE
+        Should Be True    condition=${balance_exist}    msg=There is no balance
+    END
 
 Check List Owned
     Go to    ${market_url}
