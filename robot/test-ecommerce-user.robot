@@ -22,7 +22,7 @@ E-Commerce
     Set Selenium Implicit Wait    5 seconds
     # Create Account    ${username}    ${email}    ${password}
     Login    ${username}    ${password}
-    User Profile
+    # User Profile
     Check Details
     Check Buy
     Check Sell

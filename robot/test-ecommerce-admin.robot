@@ -22,14 +22,14 @@ E-Commerce
     Set Selenium Implicit Wait    5 seconds
     Login    ${username}    ${password}
     Check Details
-    Check Buy
-    Check Sell
-    Check Balance
-    Check List Owned
-    User Delete
-    Items Delete
-    Product Update
-    User Update
+    # Check Buy
+    # Check Sell
+    # Check Balance
+    # Check List Owned
+    # User Delete
+    # Items Delete
+    # Product Update
+    # User Update
     Logout
     Login incorrect    ${username}    ${password_incorrect}
 

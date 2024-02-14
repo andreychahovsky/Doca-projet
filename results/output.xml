@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240213 11:13:40.745" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.10.12 on linux)" generated="20240214 11:40:05.840" rpa="false" schemaversion="4">
 <suite id="s1" name="Projet" source="/home/andrew/Documents/QA/Docaposte/Projet">
 <suite id="s1-s1" name="Robot" source="/home/andrew/Documents/QA/Docaposte/Projet/robot">
-<suite id="s1-s1-s1" name="Test-Ecommerce-User" source="/home/andrew/Documents/QA/Docaposte/Projet/robot/test-ecommerce-user.robot">
+<suite id="s1-s1-s1" name="Test-Ecommerce-Admin" source="/home/andrew/Documents/QA/Docaposte/Projet/robot/test-ecommerce-admin.robot">
 <test id="s1-s1-s1-t1" name="E-Commerce" line="20">
 <kw name="Open Browser" library="SeleniumLibrary" type="SETUP">
 <arg>https://www.google.com/</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20240213 11:13:41.590" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
-<status status="PASS" starttime="20240213 11:13:41.586" endtime="20240213 11:13:46.638"/>
+<msg timestamp="20240214 11:40:06.817" level="INFO">Opening browser 'chrome' to base url 'https://www.google.com/'.</msg>
+<status status="PASS" starttime="20240214 11:40:06.813" endtime="20240214 11:40:14.252"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20240213 11:13:46.640" endtime="20240213 11:13:46.754"/>
+<status status="PASS" starttime="20240214 11:40:14.256" endtime="20240214 11:40:14.439"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>5 seconds</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20240213 11:13:46.756" endtime="20240213 11:13:46.763"/>
+<status status="PASS" starttime="20240214 11:40:14.441" endtime="20240214 11:40:14.452"/>
 </kw>
 <kw name="Login">
 <arg>${username}</arg>
@@ -26,157 +26,162 @@
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${login_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240213 11:13:46.770" level="INFO">Opening url 'http://127.0.0.1:5000/login'</msg>
-<status status="PASS" starttime="20240213 11:13:46.767" endtime="20240213 11:13:47.155"/>
+<msg timestamp="20240214 11:40:14.459" level="INFO">Opening url 'http://127.0.0.1:5000/login'</msg>
+<status status="PASS" starttime="20240214 11:40:14.457" endtime="20240214 11:40:15.066"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240213 11:13:48.158" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240213 11:13:47.157" endtime="20240213 11:13:48.159"/>
+<msg timestamp="20240214 11:40:16.069" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240214 11:40:15.067" endtime="20240214 11:40:16.070"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=username</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240213 11:13:48.163" level="INFO">Typing text 'Vasia' into text field 'id=username'.</msg>
-<status status="PASS" starttime="20240213 11:13:48.160" endtime="20240213 11:13:48.543"/>
+<msg timestamp="20240214 11:40:16.076" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20240214 11:40:16.071" endtime="20240214 11:40:16.539"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20240213 11:13:48.547" level="INFO">Typing text 'Password-1' into text field 'id=password'.</msg>
-<status status="PASS" starttime="20240213 11:13:48.544" endtime="20240213 11:13:48.842"/>
+<msg timestamp="20240214 11:40:16.543" level="INFO">Typing text 'admin' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20240214 11:40:16.540" endtime="20240214 11:40:16.885"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>id=submit</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240213 11:13:48.846" level="INFO">Clicking button 'id=submit'.</msg>
-<status status="PASS" starttime="20240213 11:13:48.844" endtime="20240213 11:13:50.242"/>
+<msg timestamp="20240214 11:40:16.890" level="INFO">Clicking button 'id=submit'.</msg>
+<status status="PASS" starttime="20240214 11:40:16.886" endtime="20240214 11:40:18.521"/>
 </kw>
-<status status="PASS" starttime="20240213 11:13:46.765" endtime="20240213 11:13:50.243"/>
+<status status="PASS" starttime="20240214 11:40:14.454" endtime="20240214 11:40:18.522"/>
 </kw>
-<kw name="Check Sell">
+<kw name="Check Details">
 <kw name="Go To" library="SeleniumLibrary">
 <arg>${market_url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20240213 11:13:50.247" level="INFO">Opening url 'http://127.0.0.1:5000/market'</msg>
-<status status="PASS" starttime="20240213 11:13:50.246" endtime="20240213 11:13:50.425"/>
+<msg timestamp="20240214 11:40:18.529" level="INFO">Opening url 'http://127.0.0.1:5000/market'</msg>
+<status status="PASS" starttime="20240214 11:40:18.526" endtime="20240214 11:40:18.774"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240213 11:13:51.428" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240213 11:13:50.426" endtime="20240213 11:13:51.429"/>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${owned_items}</var>
-<arg>xpath://div[contains(@class,'card-body')]</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20240213 11:13:51.478" level="INFO">${owned_items} = 1</msg>
-<status status="PASS" starttime="20240213 11:13:51.430" endtime="20240213 11:13:51.478"/>
-</kw>
-<kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>first=${owned_items}</arg>
-<arg>second=1</arg>
-<arg>msg=Before sell:\nActual count of items is ${owned_items}.\nExpected cont of items is 1.</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<msg timestamp="20240213 11:13:51.481" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20240213 11:13:51.479" endtime="20240213 11:13:51.482"/>
-</kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${available_items_before_sell}</var>
-<arg>xpath://tr</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20240213 11:13:51.525" level="INFO">${available_items_before_sell} = 13</msg>
-<status status="PASS" starttime="20240213 11:13:51.482" endtime="20240213 11:13:51.526"/>
-</kw>
-<kw name="Convert To Number" library="BuiltIn">
-<var>${available_items_before_sell}</var>
-<arg>${available_items_before_sell}</arg>
-<doc>Converts the given item to a floating point number.</doc>
-<msg timestamp="20240213 11:13:51.528" level="INFO">${available_items_before_sell} = 13.0</msg>
-<status status="PASS" starttime="20240213 11:13:51.526" endtime="20240213 11:13:51.529"/>
+<msg timestamp="20240214 11:40:19.778" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240214 11:40:18.775" endtime="20240214 11:40:19.779"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath://button[contains(text(),'Sell')]</arg>
+<arg>xpath://button[contains(text(),'Info')]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20240213 11:13:51.532" level="INFO">Clicking button 'xpath://button[contains(text(),'Sell')]'.</msg>
-<status status="PASS" starttime="20240213 11:13:51.529" endtime="20240213 11:13:51.760"/>
+<msg timestamp="20240214 11:40:19.786" level="INFO">Clicking button 'xpath://button[contains(text(),'Info')]'.</msg>
+<status status="PASS" starttime="20240214 11:40:19.781" endtime="20240214 11:40:20.539"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>xpath://div[contains(@class,'modal-dialog')]</arg>
+<arg>message=Actual result : There is no element with the class 'modal-dialog'.\nEcpected result : There is an modal window with the class 'modal-dialog'.</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20240214 11:40:20.608" level="INFO">Current page contains element 'xpath://div[contains(@class,'modal-dialog')]'.</msg>
+<status status="PASS" starttime="20240214 11:40:20.541" endtime="20240214 11:40:20.609"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://button[contains(text(),'Close')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240214 11:40:20.614" level="INFO">Clicking button 'xpath://button[contains(text(),'Close')]'.</msg>
+<status status="PASS" starttime="20240214 11:40:20.610" endtime="20240214 11:40:21.787"/>
+</kw>
+<status status="PASS" starttime="20240214 11:40:18.524" endtime="20240214 11:40:21.788"/>
+</kw>
+<kw name="Logout">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${logout_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240214 11:40:21.795" level="INFO">Opening url 'http://127.0.0.1:5000/logout'</msg>
+<status status="PASS" starttime="20240214 11:40:21.793" endtime="20240214 11:40:22.130"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1 seconds</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20240213 11:13:52.763" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20240213 11:13:51.761" endtime="20240213 11:13:52.763"/>
+<msg timestamp="20240214 11:40:23.133" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240214 11:40:22.131" endtime="20240214 11:40:23.134"/>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>xpath://div[@id='Sell-1']/div/div/div[2]/form/div/input[2]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20240213 11:13:52.767" level="INFO">Clicking element 'xpath://div[@id='Sell-1']/div/div/div[2]/form/div/input[2]'.</msg>
-<status status="PASS" starttime="20240213 11:13:52.765" endtime="20240213 11:13:53.239"/>
+<kw name="Get Title" library="SeleniumLibrary">
+<var>${page_title}</var>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20240214 11:40:23.152" level="INFO">${page_title} = E-Commerce</msg>
+<status status="PASS" starttime="20240214 11:40:23.135" endtime="20240214 11:40:23.152"/>
 </kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${owned_items}</var>
-<arg>xpath://div[contains(@class,'card-body')]</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20240213 11:13:58.274" level="INFO">${owned_items} = 0</msg>
-<status status="PASS" starttime="20240213 11:13:53.241" endtime="20240213 11:13:58.275"/>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>first=${page_title}</arg>
+<arg>second=E-Commerce</arg>
+<arg>msg=Actual page title is '${page_title}'.\nExpected page title is 'E-Commerce'.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240214 11:40:23.153" endtime="20240214 11:40:23.157"/>
 </kw>
-<kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>first=${owned_items}</arg>
-<arg>second=0</arg>
-<arg>msg=After sell:\nActual count of items is ${owned_items}.\nExpected cont of items is 0.</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<msg timestamp="20240213 11:13:58.279" level="INFO">Argument types are:
-&lt;class 'int'&gt;
-&lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20240213 11:13:58.277" endtime="20240213 11:13:58.280"/>
+<status status="PASS" starttime="20240214 11:40:21.790" endtime="20240214 11:40:23.158"/>
 </kw>
-<kw name="Get Element Count" library="SeleniumLibrary">
-<var>${available_items_after_sell}</var>
-<arg>xpath://tr</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<msg timestamp="20240213 11:13:58.307" level="INFO">${available_items_after_sell} = 14</msg>
-<status status="PASS" starttime="20240213 11:13:58.280" endtime="20240213 11:13:58.307"/>
+<kw name="Login Incorrect">
+<arg>${username}</arg>
+<arg>${password_incorrect}</arg>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${login_url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20240214 11:40:23.162" level="INFO">Opening url 'http://127.0.0.1:5000/login'</msg>
+<status status="PASS" starttime="20240214 11:40:23.160" endtime="20240214 11:40:23.303"/>
 </kw>
-<kw name="Convert To Number" library="BuiltIn">
-<var>${available_items_after_sell}</var>
-<arg>${available_items_after_sell}</arg>
-<doc>Converts the given item to a floating point number.</doc>
-<msg timestamp="20240213 11:13:58.310" level="INFO">${available_items_after_sell} = 14.0</msg>
-<status status="PASS" starttime="20240213 11:13:58.308" endtime="20240213 11:13:58.310"/>
+<kw name="Sleep" library="BuiltIn">
+<arg>1 seconds</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240214 11:40:24.306" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20240214 11:40:23.304" endtime="20240214 11:40:24.307"/>
 </kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${check_items}</var>
-<arg>${available_items_before_sell} + 1</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20240213 11:13:58.314" level="INFO">${check_items} = 14.0</msg>
-<status status="PASS" starttime="20240213 11:13:58.312" endtime="20240213 11:13:58.314"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240214 11:40:24.312" level="INFO">Typing text 'admin' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20240214 11:40:24.308" endtime="20240214 11:40:24.597"/>
 </kw>
-<kw name="Should Be Equal As Numbers" library="BuiltIn">
-<arg>first=${available_items_after_sell}</arg>
-<arg>second=${check_items}</arg>
-<arg>msg=Available items after sell ERROR.</arg>
-<doc>Fails if objects are unequal after converting them to real numbers.</doc>
-<status status="PASS" starttime="20240213 11:13:58.315" endtime="20240213 11:13:58.317"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${password_incorrect}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240214 11:40:24.603" level="INFO">Typing text 'password-1' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20240214 11:40:24.599" endtime="20240214 11:40:24.952"/>
 </kw>
-<status status="PASS" starttime="20240213 11:13:50.244" endtime="20240213 11:13:58.317"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>id=submit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240214 11:40:24.957" level="INFO">Clicking button 'id=submit'.</msg>
+<status status="PASS" starttime="20240214 11:40:24.954" endtime="20240214 11:40:26.371"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${alert_text}</var>
+<arg>xpath://div[@class='alert alert-danger'][1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20240214 11:40:26.549" level="INFO">${alert_text} = ×
+Username and password are not match! Please try again</msg>
+<status status="PASS" starttime="20240214 11:40:26.373" endtime="20240214 11:40:26.550"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>first=${alert_text}</arg>
+<arg>second=×\nUsername and password are not match! Please try again</arg>
+<arg>msg=Actual alert message : ${alert_text}\nExpected message : ×\nUsername and password are not match! Please try again.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20240214 11:40:26.552" endtime="20240214 11:40:26.558"/>
+</kw>
+<status status="PASS" starttime="20240214 11:40:23.159" endtime="20240214 11:40:26.559"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20240213 11:13:58.320" endtime="20240213 11:13:58.541"/>
+<status status="PASS" starttime="20240214 11:40:26.562" endtime="20240214 11:40:26.789"/>
 </kw>
-<status status="PASS" starttime="20240213 11:13:41.582" endtime="20240213 11:13:58.543"/>
+<status status="PASS" starttime="20240214 11:40:06.809" endtime="20240214 11:40:26.790"/>
 </test>
-<status status="PASS" starttime="20240213 11:13:40.868" endtime="20240213 11:13:58.549"/>
+<status status="PASS" starttime="20240214 11:40:05.997" endtime="20240214 11:40:26.800"/>
 </suite>
-<status status="PASS" starttime="20240213 11:13:40.858" endtime="20240213 11:13:58.559"/>
+<status status="PASS" starttime="20240214 11:40:05.984" endtime="20240214 11:40:26.828"/>
 </suite>
-<status status="PASS" starttime="20240213 11:13:40.757" endtime="20240213 11:13:58.568"/>
+<status status="PASS" starttime="20240214 11:40:05.857" endtime="20240214 11:40:26.842"/>
 </suite>
 <statistics>
 <total>
@@ -187,7 +192,7 @@
 <suite>
 <stat pass="1" fail="0" skip="0" id="s1" name="Projet">Projet</stat>
 <stat pass="1" fail="0" skip="0" id="s1-s1" name="Robot">Projet.Robot</stat>
-<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test-Ecommerce-User">Projet.Robot.Test-Ecommerce-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Test-Ecommerce-Admin">Projet.Robot.Test-Ecommerce-Admin</stat>
 </suite>
 </statistics>
 <errors>
